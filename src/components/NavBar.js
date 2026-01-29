@@ -1,10 +1,11 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import { Link } from 'react-router-dom';
 
 export default function NavBar(props) {
 
   const navbarClass = `navbar navbar-expand-lg ${
-    props.mode === 'dark' ? 'navbar-dark bg-dark' : 'navbar-light bg-light'
+    props.mode === 'dark' ? 'navbar-dark custom-dark-navbar' : 'navbar-light bg-light'
   }`;
 
   return (
@@ -24,10 +25,10 @@ export default function NavBar(props) {
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav me-auto mb-2 mb-lg-0">
             <li className="nav-item">
-              <a className="nav-link active" href="/">Home</a>
+              <Link className="nav-link active" to="/">Home</Link>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#About">{props.about}</a>
+              <Link className="nav-link" to="/about">{props.about}</Link>
             </li>
           </ul>
 
