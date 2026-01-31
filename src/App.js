@@ -4,11 +4,11 @@ import NavBar from './components/NavBar';
 import TextForm from './components/TextForm';
 import About from './components/About';
 import Alert from './components/Alert';
-// import {
-//   BrowserRouter as Router,
-//   Routes,
-//   Route
-// } from "react-router-dom";
+import {
+ HashRouter as Router,
+  Routes,
+  Route
+} from "react-router-dom";
 
 
 function App() {
@@ -60,7 +60,7 @@ function App() {
 
   return (
     <>
-    {/* <Router> */}
+    <Router>
       <NavBar
         title="Haris-Develop"
         about="About Section"
@@ -69,39 +69,35 @@ function App() {
       />
   <Alert alert={alert} />
   <div className="container my-3">
-    {/* <Routes>
+    <Routes>
 
       <Route
-       exact path="/about"
-        element={ */}
-          {/* <About
+        path="/about"
+        element=
+          { <About
             mode={mode}
             toggleMode={toggleMode}
-          /> */}
-        {/* }
-      /> */}
+          /> }
+        
+      />
 
-      {/* <Route
-      exact  path="/"
-        element={ */}
+      <Route
+       path="/"
+        element={
           <TextForm
             heading="Enter the text to analyze"
             mode={mode}
             showAlert={showAlert}
           />
-        {/* }
-      /> */}
+        }
+      />
 
-    {/* </Routes> */}
-      <About
-            mode={mode}
-            toggleMode={toggleMode}
-          />
-  </div>
-{/* </Router> */}
+    </Routes>
+    </div>
+</Router>
 
-    </>
+   </>
   );
 }
-
+ 
 export default App;
